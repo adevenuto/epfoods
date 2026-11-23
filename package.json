@@ -1,0 +1,26 @@
+{
+  "name": "epfoods",
+  "version": "0.1.0",
+  "private": true,
+  "description": "epfoods",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist --nojekyll"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "gh-pages": "^6.3.0",
+    "vite": "^8.3.8"
+  }
+}
