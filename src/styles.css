@@ -759,6 +759,10 @@ a.pill--forest:hover { background: var(--forest-hover); }
   gap: 20px;
 }
 
+.dept-soon__panel .section-h2 {
+  text-wrap: balance;
+}
+
 .dept-soon__body {
   margin: 0;
   font-size: 17px;
