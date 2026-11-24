@@ -403,22 +403,32 @@ a.pill--forest:hover { background: var(--forest-hover); }
   object-fit: cover;
 }
 
+/* Darkens the top (behind the nav) and the bottom, where the content sits. */
 .hero__gradient {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
     rgba(var(--overlay), 0.55) 0%,
-    rgba(var(--overlay), 0) 28%,
-    rgba(var(--overlay), 0.1) 55%,
-    rgba(var(--overlay), 0.82) 100%
+    rgba(var(--overlay), 0) 26%,
+    rgba(var(--overlay), 0.3) 42%,
+    rgba(var(--overlay), 0.9) 100%
   );
 }
 
 .hero__tint {
   position: absolute;
   inset: 0;
-  background: rgba(var(--overlay), 0.1);
+  background: rgba(var(--overlay), 0.2);
+}
+
+/* On wide screens the headline sits bottom-left, so shade that side and keep the right bright. */
+@media (min-width: 1000px) {
+  .hero__tint {
+    background:
+      linear-gradient(90deg, rgba(var(--overlay), 0.6) 0%, rgba(var(--overlay), 0.35) 40%, rgba(var(--overlay), 0) 72%),
+      rgba(var(--overlay), 0.15);
+  }
 }
 
 .hero__content {
@@ -726,6 +736,35 @@ a.pill--forest:hover { background: var(--forest-hover); }
 .prose .prose__closing {
   color: var(--forest);
   font-weight: 700;
+}
+
+/* ---------- Department pages ---------- */
+
+/* kitchen.webp is a wide crop with a strip of other photos along its bottom edge; keep that strip out of frame. */
+.dept-hero__img--kitchen {
+  background-size: auto 115%;
+  background-position: center top;
+}
+
+.dept-soon {
+  padding: 40px var(--gutter) var(--section);
+}
+
+.dept-soon__panel {
+  padding: clamp(40px, 6vw, 72px) 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.dept-soon__body {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--mint-ink);
+  max-width: 520px;
 }
 
 /* ---------- Careers ---------- */

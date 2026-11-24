@@ -34,30 +34,39 @@ export const NAV_LINKS = [
   { to: '/order', label: 'Taqueria Menu' },
 ]
 
+// Each department gets a card on Home and its own page at `to`.
+// `heading` and `teaser` are placeholder page copy until the client provides more.
 export const DEPARTMENTS = [
   {
     title: 'Bakery',
+    heading: 'Our Bakery',
     img: asset('bakery.webp'),
     variant: 'bakery',
     cta: 'Explore Our Bakery',
-    to: '/about',
+    to: '/bakery',
     body: 'From our signature apple pie to cookies baked fresh every day, our bakery is all about homemade goodness you can taste.',
+    teaser: 'More from our bakery is coming soon.',
   },
   {
     title: 'Produce',
+    heading: 'Our Produce',
     img: asset('produce.webp'),
     variant: 'produce',
     cta: 'Explore Our Produce',
-    to: '/about',
+    to: '/produce',
     body: 'From organic favorites to everyday essentials, our produce department delivers freshness you can see and taste.',
+    teaser: 'More from our produce department is coming soon.',
   },
   {
     title: 'EP Kitchen and Deli',
+    heading: 'EP Kitchen and Deli',
     img: asset('kitchen.webp'),
     variant: 'kitchen',
     cta: 'Explore Our Deli and Kitchen',
-    to: '/order',
+    to: '/deli',
     body: 'From our EP Fresh Kitchen and Taqueria to our full-service deli, we’re serving fresh, made-daily meals ready for your table.',
+    teaser: 'More from our kitchen and deli is coming soon.',
+    orderCta: true,
   },
 ]
 
