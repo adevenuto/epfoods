@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ADDRESS, asset, HOURS, MAPS_EMBED_URL, MAPS_URL, NAV_LINKS, PHONE } from '../data/site.js'
+import { ADDRESS, asset, DEPARTMENTS, HOURS, MAPS_EMBED_URL, MAPS_URL, NAV_LINKS, PHONE } from '../data/site.js'
 
 const LEGAL_LINKS = ['Terms of Service', 'Privacy Statement', 'Cookie Settings', 'Website Accessibility Assistance']
 
@@ -28,6 +28,14 @@ export default function Footer() {
               {PHONE.display}
             </a>
             <span className="footer__muted">{HOURS}</span>
+          </div>
+          <div className="footer__col">
+            <span className="footer__label">Departments</span>
+            {DEPARTMENTS.map((d) => (
+              <Link key={d.to} to={d.to} className="footer__explore">
+                {d.title}
+              </Link>
+            ))}
           </div>
           <div className="footer__col">
             <span className="footer__label">Explore</span>
