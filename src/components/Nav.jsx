@@ -50,7 +50,7 @@ export default function Nav() {
             <a href={PHONE.href} className="nav__phone">
               {PHONE.display}
             </a>
-            <PillButton to="/order" variant="sun" size="nav">
+            <PillButton to="/order" variant="sun" size="nav" className="nav__order">
               Order Online
             </PillButton>
             <button

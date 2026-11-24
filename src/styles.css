@@ -337,6 +337,20 @@ a.pill--forest:hover { background: var(--forest-hover); }
   cursor: pointer;
 }
 
+/* Phones: logo, Order Online and Menu don't fit in one row, so ordering moves into the menu sheet. */
+.mobile-menu__order {
+  display: none;
+}
+
+@media (max-width: 459px) {
+  .nav__order { display: none; }
+  .mobile-menu__order {
+    display: flex;
+    width: 100%;
+    margin: 8px 0 12px;
+  }
+}
+
 @media (min-width: 1000px) {
   .nav__links { display: flex; }
   .nav__menu-btn { display: none; }
@@ -362,6 +376,11 @@ a.pill--forest:hover { background: var(--forest-hover); }
   overflow-y: auto;
 }
 
+/* On short screens (e.g. a phone in landscape) scroll the sheet rather than squashing its items. */
+.mobile-menu > * {
+  flex-shrink: 0;
+}
+
 .mobile-menu__link,
 .mobile-menu__link:hover {
   padding: 18px 0;
@@ -385,10 +404,11 @@ a.pill--forest:hover { background: var(--forest-hover); }
 
 /* ---------- Home: hero ---------- */
 
+/* Fills the screen, but grows instead of sliding under the nav when the content is taller (small phones). */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 640px;
+  min-height: max(100vh, 640px);
+  padding-top: 112px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
